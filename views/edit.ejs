@@ -16,9 +16,9 @@
                         <% if (item._id == idItem ) { %>
                         <form action="/edit/update/<%= item._id%>" method="POST">
                             <label for="textinput">Input Text</label>
-                            <input type="text" name = "textinput" value="<%= item.textinput%>">
+                            <input type="text" name = "textinput" value="<%= item.textinput %>">
                             <label for="numinput">Input Number</label>
-                            <input type="number" name = "numinput" value = "<%= item.numinput%>">
+                            <input type="number" name = "numinput" value = "<%= item.numinput %>">
                             <button type="submit">Confirm</button>
                             <a href="/">Cancel</a>
                         </form>
@@ -27,13 +27,13 @@
                         <li>
                             <div><%= item.textinput %></div>
                             <div><%= item.numinput %></div>
-                            <a href="edit/<%= item._id %>">Edit</a>
-                            <a href="edit/remove/<%= item._id %>">Remove</a>
+                            <a href="/edit/<%= item._id %>">Edit</a>
+                            <a href="/edit/remove/<%= item._id %>">Remove</a>
                         </li>
                         <% } %>
                 <% }) %>
             </ul>
-            </ul>
+    
         </section>
     </section>
 </body>

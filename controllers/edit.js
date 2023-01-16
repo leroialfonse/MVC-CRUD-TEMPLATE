@@ -13,35 +13,28 @@ module.exports = {
         }
     },
     deleteItem: async (req,res) => {
-        const newItem = new ItemList(
-            {
-                textinput: req.body.textinput,
-                numinput: req.body.numinput
-            }
-        )
+        const Id = req.params.id
         try {
-            await newItem.save()
-            console.log(newItem)
-            res.redirect("/")
-        } catch(err) {
-            if (err) return res.status(500).send(err)
-            res.redirect("/")
-        }
-    },
+            const result = await ItemList.findByIdAndDelete(id)
+            console.log(result)
+                    res.redirect('back');
+                } catch (err) {
+                    if (err) return res.status(500).send(err)
+                }
+                },
     updateItem: async (req,res) => {
-        const newItem = new ItemList(
-            {
-                textinput: req.body.textinput,
-                numinput: req.body.numinput
+        const id = req.params.id
+            try{
+               await ItemList.findByIdAndUpdate(
+                id, {
+                    textinput: req.body.textinput,
+                    numinput: req.body.numinput
+                },
+               )
+               res.redirect('/');
+            } catch (err) {
+                if (err) return res.status(500).send(err)
+                res.redirect('/');
             }
-        )
-        try {
-            await newItem.save()
-            console.log(newItem)
-            res.redirect("/")
-        } catch(err) {
-            if (err) return res.status(500).send(err)
-            res.redirect("/")
         }
     }
-}

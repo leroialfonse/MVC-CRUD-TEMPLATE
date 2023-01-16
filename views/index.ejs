@@ -21,9 +21,9 @@
             <li>
                 <div><%= item.textinput %></div>
                 <div><%= item.numinput %></div>
-                            <a href="">Edit</
-                <a href="/edit/:<%= item._id %>">Edit</a>
-                <a href="/edit/remove/:<%= item._id %>">Remove</a>
+                <!-- Don't have to use : to look for the item id here. It's already been selected with the ._ by mongo and such. -->
+                <a href="/edit/<%= item._id %>">Edit</a>
+                <a href="/edit/remove/<%= item._id %>">Remove</a>
             </li>
         <% }) %>
     </ul>
