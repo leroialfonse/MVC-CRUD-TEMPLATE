@@ -21,8 +21,9 @@
             <li>
                 <div><%= item.textinput %></div>
                 <div><%= item.numinput %></div>
-                <a href="">Edit</a>
-                <a href="">Remove</a>
+                            <a href="">Edit</
+                <a href="/edit/:<%= item._id %>">Edit</a>
+                <a href="/edit/remove/:<%= item._id %>">Remove</a>
             </li>
         <% }) %>
     </ul>
