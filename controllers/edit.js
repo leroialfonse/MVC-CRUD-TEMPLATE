@@ -13,7 +13,7 @@ module.exports = {
         }
     },
     deleteItem: async (req,res) => {
-        const Id = req.params.id
+        const id = req.params.id
         try {
             const result = await ItemList.findByIdAndDelete(id)
             console.log(result)
